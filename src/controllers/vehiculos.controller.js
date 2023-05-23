@@ -30,7 +30,7 @@ const updateVehiculoByPatente = (req, res) => {
                 mensaje: "Fuera del rango de capacidad"
             })
         }else{vehiculos[indice].capacidad = update.capacidad}
-        if (!update.autonomiaKms > 0) {
+        if (update.autonomiaKms <= 0) {
             res.status(400).json({
                 mensaje: "Fuera del rango de autonomia"
             })
